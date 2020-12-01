@@ -1,0 +1,44 @@
+{
+    "name": "react-spotify-app",
+    "version": "1.0.0",
+    "description": "",
+    "private": true,
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "webpack serve --mode development",
+        "build": "webpack --mode production"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Termedea/react-spotify-app.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/core": "^7.12.8",
+        "@babel/preset-env": "^7.12.7",
+        "@babel/preset-react": "^7.12.7",
+        "@babel/plugin-transform-runtime": "^7.12.1",
+        "autoprefixer": "^10.0.4",
+        "babel-loader": "^8.2.1",
+        "css-loader": "^5.0.1",
+        "postcss-import": "^13.0.0",
+        "postcss-loader": "^4.1.0",
+        "postcss-nested": "^5.0.1",
+        "postcss-simple-vars": "^6.0.1",
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1",
+        "style-loader": "^2.0.0",
+        "webpack": "^5.6.0",
+        "webpack-cli": "^4.2.0",
+        "webpack-dev-server": "^3.11.0"
+    },
+    "bugs": {
+        "url": "https://github.com/Termedea/react-spotify-app/issues"
+    },
+    "homepage": "https://github.com/Termedea/react-spotify-app#readme",
+    "dependencies": {
+        "tailwindcss": "^2.0.1"
+    }
+}
