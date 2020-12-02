@@ -3,10 +3,13 @@ module.exports = {
     darkMode: false, // or 'media' or 'class'
     theme: {
         extend: {
+            opacity: {
+                def: '.80'
+            },
             fontFamily: {
-                heading: ['Texturina', 'ui-serif', 'serif'],
-                body: ['Nunito', 'ui-sans-serif'],
-                sans: ['Nunito', 'ui-sans-serif']
+                heading: ['Baumans', 'ui-serif', 'serif'],
+                sans: ['Nunito', 'ui-sans-serif'],
+                serif: ["'Playfair Display'", 'ui-sans-serif', 'sans-serif']
             },
             colors: {
                 primary: {
@@ -14,7 +17,7 @@ module.exports = {
                     light: '#b2d0f9',
                     DEFAULT: '#7fb1f6',
                     dark: '#4c6a93',
-                    darker: '#192331'
+                    darker: '#0c1118'
                 },
                 secondary: {
                     lighter: '#fdf3e5',
