@@ -3,6 +3,16 @@
 
 @layer base {
     body {
-        @apply text-primary-darker bg-primary-darker;
+        @apply bg-gradient-to-b from-primary-darker to-black;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
     }
+}
+
+h2 {
+    @apply font-sans text-4xl text-white mb-2;
+}
+
+.main-component {
+    @apply p-3 m-6 rounded-xl;
 }

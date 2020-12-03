@@ -6,7 +6,7 @@ class UserProfile extends React.Component {
         return (
             <div className="UserProfile  main-component bg-gradient-to-tr from-green-600 to-acc-green rounded-xl">
                 <h2>User profile: Termedea</h2>
-                <p>
+                <p className="text-acc-green-darker">
                     Eiusmod id commodo excepteur eiusmod deserunt veniam
                     consectetur velit adipisicing eu mollit esse. Cupidatat ad
                     quis eiusmod eiusmod officia Lorem sunt fugiat sunt.

@@ -5,11 +5,9 @@ import './TrackList.css';
 class TrackList extends React.Component {
     render() {
         return (
-            <main className="TrackList xl:mr-5 mr-0">
-                <h2>Track List</h2>
-                <p className="bg-white apply p-3 rounded-md shadow-md">
-                    Recently played by Termedea
-                </p>
+            <main className="TrackList xl:mr-5 mr-0 pt-3 ">
+                <h2>Recently played</h2>
+
                 <TrackListItem />
                 <TrackListItem />
                 <TrackListItem />

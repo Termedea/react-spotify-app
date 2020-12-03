@@ -3,6 +3,10 @@ module.exports = {
     darkMode: false, // or 'media' or 'class'
     theme: {
         extend: {
+            maxWidth: {
+                '8xl': '86rem',
+                '9xl': '92rem'
+            },
             opacity: {
                 def: '.80'
             },

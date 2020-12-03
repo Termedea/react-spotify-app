@@ -14,10 +14,10 @@ class TrackListItem extends React.Component {
                 <div className="item-column flex-grow">
                     <span>[Track Name]</span>
                 </div>
-                <div className="item-column flex-grow">
+                <div className="item-column flex-grow hidden sm:block">
                     <span>[Album]</span>
                 </div>
-                <div className="item-column flex-grow">
+                <div className="item-column flex-grow hidden sm:block">
                     <span>[Artist]</span>
                 </div>
                 <div className="item-column flex-none">
