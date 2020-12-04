@@ -1,5 +1,6 @@
 import React from 'react';
-import './Pill.css';
+
+import '../../styles/includes.css';
 
 class Pill extends React.Component {
     render() {

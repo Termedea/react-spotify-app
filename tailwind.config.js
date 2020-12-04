@@ -3,9 +3,13 @@ module.exports = {
     darkMode: false, // or 'media' or 'class'
     theme: {
         extend: {
+            screens: {
+                'lg+': '1360px'
+            },
             maxWidth: {
                 '8xl': '86rem',
-                '9xl': '92rem'
+                '9xl': '92rem',
+                'grid-3': '220px'
             },
             opacity: {
                 def: '.80'

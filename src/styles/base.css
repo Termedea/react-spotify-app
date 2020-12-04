@@ -14,5 +14,5 @@ h2 {
 }
 
 .main-component {
-    @apply p-3 m-6 rounded-xl;
+    @apply p-4 m-6 rounded-xl;
 }
