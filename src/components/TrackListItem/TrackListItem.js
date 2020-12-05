@@ -4,9 +4,6 @@ const TrackListItem = () => {
     return (
         <div className="TrackListItem flex items-center gap-2 p-3 mt-2 bg-white rounded-md shadow-md text-sm">
             <div className="item-column flex-none">
-                <img src="https://dummyimage.com/30" alt="Album image" />
-            </div>
-            <div className="item-column flex-none">
                 <span>[1]</span>
             </div>
             <div className="item-column flex-grow">

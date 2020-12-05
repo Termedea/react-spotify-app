@@ -6,17 +6,40 @@ import Header from '../Header/Header';
 import Search from '../Search/Search';
 
 class App extends React.Component {
+    state = {
+        searchTerm: '',
+        tracks: [
+            {
+                title: 'Sapien',
+                artist: 'Gazpacho',
+                album: 'Fireworker',
+                duration: '15:22'
+            },
+            {
+                title: 'Downhill',
+                artist: 'Rishloo',
+                album: 'Feathergun',
+                duration: '8:13'
+            },
+            {
+                title: 'Collision',
+                artist: 'Mother of Millions',
+                album: 'Sigma',
+                duration: '4:47'
+            }
+        ]
+    };
+
     handleSearch = (event) => {
         console.log(event.target.value);
-    };
-    state = {
-        searchTerm: ''
+        //async fetch list
+        //set state tracks.
     };
     render() {
         return (
             <div className="App">
                 <Header />
-                <div className="max-w-9xl mx-auto">
+                <div className="max-w-screen-2xl mx-auto">
                     <UserProfile />
 
                     <div className="grid xl:grid-cols-12 grid-cols-1 bg-gradient-to-br from-red-500 to-acc-pink rounded-md main-component">
@@ -26,7 +49,7 @@ class App extends React.Component {
                                     value="searchTerm"
                                     onChange={this.handleSearch}
                                 />
-                                <TrackList />
+                                <TrackList tracks={this.state.tracks} />
                             </div>
                         </div>
                         <div className="col-span-7 xl:mt-0 mt-3">

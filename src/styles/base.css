@@ -10,7 +10,7 @@
 }
 
 h2 {
-    @apply font-sans text-4xl text-white mb-2;
+    @apply font-sans text-3xl text-white mb-2;
 }
 
 .main-component {

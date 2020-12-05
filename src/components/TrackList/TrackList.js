@@ -1,7 +1,7 @@
 import React from 'react';
 import TrackListItem from '../TrackListItem/TrackListItem';
 
-const TrackList = () => {
+const TrackList = ({ trackList }) => {
     return (
         <aside className="TrackList ">
             <h2>Search results</h2>

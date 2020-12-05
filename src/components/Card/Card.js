@@ -22,6 +22,7 @@ class Card extends React.Component {
                                 <h3>Title</h3>
                                 <p>Album - Year</p>
                                 <p>Artist</p>
+                                <p className="text-xs">Popularity</p>
                             </div>
                             <div className="icon flex-none">
                                 <span className="fas fa-star text-primary-darker">

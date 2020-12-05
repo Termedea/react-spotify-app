@@ -4,12 +4,12 @@ module.exports = {
     theme: {
         extend: {
             screens: {
-                'lg+': '1360px'
+                'lg+': '1480px'
             },
             maxWidth: {
                 '8xl': '86rem',
                 '9xl': '92rem',
-                'grid-3': '220px'
+                'grid-3': '240px'
             },
             opacity: {
                 def: '.80'
@@ -26,13 +26,6 @@ module.exports = {
                     DEFAULT: '#7fb1f6',
                     dark: '#4c6a93',
                     darker: '#0c1118'
-                },
-                secondary: {
-                    lighter: '#fdf3e5',
-                    light: '#f9dbb2',
-                    DEFAULT: '#f6c47f',
-                    dark: '#93754c',
-                    darker: '#493a26'
                 },
                 'acc-green': {
                     lighter: '#e5fde7',

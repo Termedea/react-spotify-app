@@ -9,11 +9,14 @@ const Search = ({ searchTerm, searchCallback }) => {
                 <input
                     id="search"
                     type="text"
-                    className="rounded-md p-3 w-full outline-none shadow-md focus:ring-2 focus:ring-primary"
+                    className="rounded-md p-2 w-full outline-none shadow-md focus:ring-2 focus:ring-primary"
                     value={searchTerm}
                     onChange={searchCallback}
                 />
-                <button className="rounded-md p-3 bg-primary text-primary-darker font-bold shadow-md border-primary border-2 focus:outline-none">
+                <button
+                    className="rounded-md p-2 text-primary-darker font-bold shadow-md 
+                            border-primary border-2 focus:outline-none bg-primary hover:bg-blue-300"
+                >
                     Search
                 </button>
             </div>
