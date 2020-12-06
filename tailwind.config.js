@@ -25,7 +25,7 @@ module.exports = {
                     light: '#b2d0f9',
                     DEFAULT: '#7fb1f6',
                     dark: '#4c6a93',
-                    darker: '#0c1118'
+                    darker: '#192331'
                 },
                 'acc-green': {
                     lighter: '#e5fde7',

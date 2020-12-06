@@ -3,14 +3,30 @@
 
 @layer base {
     body {
-        @apply bg-gradient-to-b from-primary-darker to-black;
+        @apply bg-gradient-to-t from-primary-darker to-black;
         background-attachment: fixed;
         background-repeat: no-repeat;
     }
 }
 
-h2 {
-    @apply font-sans text-3xl text-white mb-2;
+.section-header {
+    @apply font-sans text-3xl text-white mb-4;
+}
+
+.sub-header {
+    @apply font-heading text-2xl font-normal;
+    &-acc-green {
+        @apply text-acc-green;
+    }
+    &-primary {
+        @apply text-primary;
+    }
+    &-gradient-primary {
+        @apply text-gradient bg-gradient-to-t from-primary to-primary-dark;
+    }
+    &-gradient-acc-green {
+        @apply text-gradient bg-gradient-to-t from-acc-green to-acc-green-dark;
+    }
 }
 
 .main-component {

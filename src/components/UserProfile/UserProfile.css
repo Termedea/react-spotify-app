@@ -1,0 +1,7 @@
+.UserProfile {
+    @apply text-acc-green-lighter;
+
+    h4 {
+        @apply font-heading text-lg text-acc-green;
+    }
+}

@@ -2,14 +2,8 @@ import React from 'react';
 
 import '../../styles/includes.css';
 
-class Pill extends React.Component {
-    render() {
-        return (
-            <div className="rounded-md bg-primary-light p-1 mr-1">
-                {this.props.text}
-            </div>
-        );
-    }
-}
+const Pill = ({ text }) => {
+    return <div className="rounded-md bg-primary-light p-1 mr-1">{text}</div>;
+};
 
 export default Pill;

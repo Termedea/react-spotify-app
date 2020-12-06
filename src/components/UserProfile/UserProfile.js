@@ -1,12 +1,13 @@
 import React from 'react';
+import IconListItem from '../IconList/IconList';
+import './UserProfile.css';
 
 class UserProfile extends React.Component {
     state = {
-        userInfo: null,
-        topTracks: null,
-        topArtists: null,
-        recentlyPlayed: null,
-        topGenres: null
+        userInfo: [],
+        topTracks: [],
+        topArtists: [],
+        topGenres: []
     };
     //Async get user info
     userInfo = {
@@ -220,191 +221,116 @@ class UserProfile extends React.Component {
         }
     ];
 
-    //Async get user 5 recently played
-    recentlyPlayed = [
-        {
-            track: {
-                disc_number: 1,
-                duration_ms: 419013,
-                explicit: true,
-                external_ids: {
-                    isrc: 'US1BR1400154'
-                },
-                external_urls: {
-                    spotify:
-                        'https://open.spotify.com/track/53xxkFhxoEiAhcv8lTJFR9'
-                },
-                href:
-                    'https://api.spotify.com/v1/tracks/53xxkFhxoEiAhcv8lTJFR9',
-                id: '53xxkFhxoEiAhcv8lTJFR9',
-                is_local: false,
-                name: 'Human',
-                popularity: 3,
-                preview_url:
-                    'https://p.scdn.co/mp3-preview/02b69470ffd6d7ca3e8375e7f9378f7605fdde7d?cid=774b29d4f13844c495f206cafdad9c86',
-                track_number: 10,
-                type: 'track',
-                uri: 'spotify:track:53xxkFhxoEiAhcv8lTJFR9'
-            },
-            played_at: '2020-12-05T14:53:44.821Z'
-        },
-        {
-            track: {
-                disc_number: 1,
-                duration_ms: 303312,
-                explicit: false,
-                external_ids: {
-                    isrc: 'GBCQV2000472'
-                },
-                external_urls: {
-                    spotify:
-                        'https://open.spotify.com/track/2v9kZ80wXd9NrbdjV9RoYF'
-                },
-                href:
-                    'https://api.spotify.com/v1/tracks/2v9kZ80wXd9NrbdjV9RoYF',
-                id: '2v9kZ80wXd9NrbdjV9RoYF',
-                is_local: false,
-                name: 'Oblivion',
-                popularity: 27,
-                preview_url:
-                    'https://p.scdn.co/mp3-preview/cc461619470415f3cb756dbac58eeae4b36b0e31?cid=774b29d4f13844c495f206cafdad9c86',
-                track_number: 4,
-                type: 'track',
-                uri: 'spotify:track:2v9kZ80wXd9NrbdjV9RoYF'
-            },
-            played_at: '2020-12-05T14:46:45.329Z'
-        },
-        {
-            track: {
-                disc_number: 1,
-                duration_ms: 293500,
-                explicit: false,
-                external_ids: {
-                    isrc: 'SEYIJ1900402'
-                },
-                external_urls: {
-                    spotify:
-                        'https://open.spotify.com/track/5YpmgUyrrEEywYsOBuWv1L'
-                },
-                href:
-                    'https://api.spotify.com/v1/tracks/5YpmgUyrrEEywYsOBuWv1L',
-                id: '5YpmgUyrrEEywYsOBuWv1L',
-                is_local: false,
-                name: 'Rite',
-                popularity: 14,
-                preview_url:
-                    'https://p.scdn.co/mp3-preview/f41571e965a7be2768d0ddd86098f0de24708e00?cid=774b29d4f13844c495f206cafdad9c86',
-                track_number: 2,
-                type: 'track',
-                uri: 'spotify:track:5YpmgUyrrEEywYsOBuWv1L'
-            },
-            played_at: '2020-12-05T14:41:41.535Z'
-        },
-        {
-            track: {
-                disc_number: 1,
-                duration_ms: 211183,
-                explicit: false,
-                external_ids: {
-                    isrc: 'NLVZ22000070'
-                },
-                external_urls: {
-                    spotify:
-                        'https://open.spotify.com/track/72rxlFMxu0AdwsZZJ1Jszo'
-                },
-                href:
-                    'https://api.spotify.com/v1/tracks/72rxlFMxu0AdwsZZJ1Jszo',
-                id: '72rxlFMxu0AdwsZZJ1Jszo',
-                is_local: false,
-                name: 'The Song of a Dying Memory',
-                popularity: 22,
-                preview_url:
-                    'https://p.scdn.co/mp3-preview/774e6eea974beaf0933830d8906b6f12946fd324?cid=774b29d4f13844c495f206cafdad9c86',
-                track_number: 1,
-                type: 'track',
-                uri: 'spotify:track:72rxlFMxu0AdwsZZJ1Jszo'
-            },
-            played_at: '2020-12-05T14:36:47.588Z'
-        },
-        {
-            track: {
-                disc_number: 1,
-                duration_ms: 230773,
-                explicit: false,
-                external_ids: {
-                    isrc: 'GBDHC2019209'
-                },
-                external_urls: {
-                    spotify:
-                        'https://open.spotify.com/track/4gtEvfy4lAnsAcQ0hOTV8T'
-                },
-                href:
-                    'https://api.spotify.com/v1/tracks/4gtEvfy4lAnsAcQ0hOTV8T',
-                id: '4gtEvfy4lAnsAcQ0hOTV8T',
-                is_local: false,
-                name: 'Eyes of the World',
-                popularity: 50,
-                preview_url:
-                    'https://p.scdn.co/mp3-preview/8075513d2afe6408d27e54a728e6d7e19620d931?cid=774b29d4f13844c495f206cafdad9c86',
-                track_number: 9,
-                type: 'track',
-                uri: 'spotify:track:4gtEvfy4lAnsAcQ0hOTV8T'
-            },
-            played_at: '2020-12-05T14:33:15.909Z'
-        }
-    ];
-
     componentDidMount() {
-        this.getTopGenres();
+        this.setState({
+            topTracks: this.topTracks,
+            topArtists: this.topArtists,
+            topGenres: this.getTopGenres()
+        });
     }
+
     //calculate top genres
     getTopGenres() {
-        let topGenres = this.topArtists
+        let genreCount = [];
+        let prevGenre;
+
+        //getting genres from artists, flatten, sorting, and looping through...
+        this.topArtists
             .map((artist) => {
                 return artist.genres;
             })
-            .flat();
+            .flat()
+            .sort()
+            .forEach((genre) => {
+                //...to save unique instances of the genre in genreCount.
+                if (genre !== prevGenre) {
+                    genreCount.push([genre, 1]);
+                } else {
+                    genreCount.find((item) => {
+                        //if the genre exists, add to its count.
+                        if (item[0] === genre) {
+                            item[1]++;
+                        }
+                    });
+                }
+                prevGenre = genre;
+            });
 
-        let genreCount = {};
-
-        topGenres.forEach((genre) => {
-            genreCount[genre] = (genreCount[genre] || 0) + 1;
-        });
-
-        let genreCountSortable = [];
-        for (let genre in genreCount) {
-            genreCountSortable.push([genre, genreCount[genre]]);
+        //set the state to top 5 genres from genreCount.
+        return genreCount.sort((a, b) => b[1] - a[1]).splice(0, 5);
+    }
+    showList(list, type) {
+        if (type === 'genres') this.showTopGenres();
+        else {
+            if (list.length > 0) {
+                return list.map((item) => (
+                    <IconListItem
+                        key={item.id}
+                        text={item.name}
+                        icon={
+                            (type === 'tracks' ? 'music' : '') ||
+                            (type === 'artists' ? 'record-vinyl' : '')
+                        }
+                    />
+                ));
+            }
         }
 
-        this.setState({
-            topGenres: genreCountSortable
-                .sort((a, b) => b[1] - a[1])
-                .slice(0, 5)
-        });
+        return <p>Loading...</p>;
     }
 
-    render() {
+    showTopGenres() {
         console.log(this.state.topGenres);
+        if (this.state.topGenres.length > 0)
+            return this.state.topGenres.map((genre, i) => (
+                <IconListItem text={genre[0]} key={i} icon="folder" />
+            ));
+    }
+    render() {
         return (
-            <div className="UserProfile  main-component bg-gradient-to-tr from-green-600 to-acc-green rounded-xl">
-                <h2>
-                    User profile:&nbsp;
-                    <a
-                        href={this.userInfo.external_urls.spotify}
-                        className="font-extrabold hover:underline hover:text-acc-pink-lighter"
-                    >
-                        {this.userInfo.display_name}
-                    </a>
+            <div className="UserProfile  main-component bg-gradient-to-bl from-yellow-400  to-acc-green rounded-xl">
+                <h2 className="section-header text-acc-green-darker">
+                    Finding best match
                 </h2>
-                <div className="flex gap-8">
-                    <img
-                        src="https://dummyimage.com/200"
-                        alt="User Profile Picture"
-                        className="rounded-md"
-                    />
-                    <div>
-                        <h3>Top 5 tracks</h3>
-                        <ul></ul>
+                <p className="text-acc-green-darker">
+                    By using top tracks, artists and genres as seeds, perfect
+                    recommendations are made based on selected song.
+                </p>
+                <div className="mt-7 p-4 rounded-xl bg-gradient-to-t from-primary-darker to to-black shadow-md">
+                    <h3 className="mb-3 sub-header sub-header-acc-green">
+                        Current user:&nbsp;
+                        <a
+                            href={this.userInfo.external_urls.spotify}
+                            className="text-white hover:underline hover:text-acc-green-lighter"
+                        >
+                            {this.userInfo.display_name}
+                        </a>
+                    </h3>
+                    <div className="flex gap-8 flex-wrap justify-start items-start  ">
+                        <img
+                            src="https://dummyimage.com/100"
+                            alt="User Profile Picture"
+                            className="rounded-md"
+                        />
+                        <div>
+                            <h4>Top 5 tracks</h4>
+                            <ul>
+                                {this.showList(this.state.topTracks, 'tracks')}
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Top 5 Genres</h4>
+                            <ul>{this.showTopGenres()}</ul>
+                        </div>
+                        <div>
+                            <h4>Top 5 artists</h4>
+                            <ul>
+                                {this.showList(
+                                    this.state.topArtists,
+                                    'artists'
+                                )}
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -3,7 +3,7 @@ import React from 'react';
 const Search = ({ searchTerm, searchCallback }) => {
     return (
         <div className="mb-5">
-            <h2>Search</h2>
+            <h2 className="section-header">Search</h2>
 
             <div className="flex gap-2">
                 <input

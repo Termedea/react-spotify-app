@@ -10,10 +10,8 @@ const SummaryGrid = ({ list, title }) => {
     });
 
     return (
-        <div className="SummaryGrid lg:max-w-lg lg+:max-w-sm border-acc-green border-2 mb-5 rounded-md p-2">
-            <h3 className="text-acc-green font-heading text-xl mb-3">
-                {title}
-            </h3>
+        <div className="SummaryGrid lg:max-w-lg lg+:max-w-sm border-primary border-2 mb-5 rounded-md p-2">
+            <h3 className="mb-3 sub-header sub-header-primary">{title}</h3>
             <div className="flex flex-wrap justify-center flex-row gap-2">
                 {thumbnails}
             </div>
