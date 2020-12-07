@@ -1,0 +1,38 @@
+@import './includes.css';
+
+@layer utilities {
+    .text-gradient {
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .section-header {
+        @apply font-sans text-3xl text-white mb-2;
+    }
+
+    .sub-header {
+        @apply font-heading text-2xl font-normal;
+        &-acc-green {
+            @apply text-acc-green;
+        }
+        &-primary {
+            @apply text-primary;
+        }
+        &-gradient-primary {
+            @apply text-gradient bg-gradient-to-t from-primary to-primary-dark;
+        }
+        &-gradient-acc-green {
+            @apply text-gradient bg-gradient-to-t from-acc-green to-acc-green-dark;
+        }
+    }
+
+    .main-component {
+        @apply p-4 m-6 rounded-xl;
+    }
+    .paragraph-description {
+        @apply text-white mb-2;
+    }
+    .semi-transparent-item {
+        @apply bg-white bg-opacity-80 border-2 border-white;
+    }
+}

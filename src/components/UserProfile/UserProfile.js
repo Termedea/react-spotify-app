@@ -280,7 +280,6 @@ class UserProfile extends React.Component {
     }
 
     showTopGenres() {
-        console.log(this.state.topGenres);
         if (this.state.topGenres.length > 0)
             return this.state.topGenres.map((genre, i) => (
                 <IconListItem text={genre[0]} key={i} icon="folder" />

@@ -9,7 +9,7 @@ const postCSSPlugins = [
 
 module.exports = {
     output: {
-        path: path.resolve(__dirname, 'public')
+        path: path.resolve(__dirname, 'dist')
     },
     module: {
         rules: [
@@ -40,9 +40,9 @@ module.exports = {
     watch: true,
     devServer: {
         before: function (app, server) {
-            server._watch('./public/**/*.html');
+            server._watch('./dist/**/*.html');
         },
-        contentBase: path.join(__dirname, 'public'),
+        contentBase: path.join(__dirname, 'dist'),
         compress: true,
         hot: true,
         port: 3001
