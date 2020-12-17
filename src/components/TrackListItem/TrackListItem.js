@@ -1,33 +1,58 @@
 import React from 'react';
+import './TrackListItem.css';
 
-const TrackListItem = ({ track, album, artists }) => {
-    let artistString;
-    if (artists.length > 1) {
-        artistString = artists.map((artist) => {
-            return artist.name + ', ';
-        });
-    } else {
-        artistString = artists[0].name;
-    }
+const getTrackDuration = (timestamp) => {
+    let minutes = Math.floor(timestamp / 60000);
+    let seconds = Math.floor((timestamp % 60000) / 1000);
 
     return (
-        <div className="TrackListItem flex items-center xl:justify-between gap-2 p-1 mt-2  rounded-md shadow-md text-sm semi-transparent-item">
-            <div className="item-column flex-none">
+        (minutes < 10 ? '0' + minutes : minutes) +
+        ':' +
+        (seconds < 10 ? '0' + seconds : seconds)
+    );
+};
+
+const getArtistString = (artists) => {
+    if (artists.length > 1) {
+        return artists.map((artist) => {
+            return <a href={artist.url}> {artist.name}</a> + ', ';
+        });
+    } else {
+        return <a href={artists[0].url}> {artists[0].name}</a>;
+    }
+};
+
+const TrackListItem = ({ track, album, artists }) => {
+    console.log(track, artists, album);
+    return (
+        <div className="TrackListItem semi-transparent-item flex items-center justify-left gap-3 rounded-md mb-2">
+            <div className="flex-shrink ">
                 <img src="https://dummyimage.com/40" alt="" />
             </div>
 
-            <div className="item-column flex-grow">
-                <span className="md:hidden xl:inline">{artistString} - </span>
-                <span>{track.name}</span>
+            <div className="align-left justify-self-start  flex-grow md:w-72 md:flex-none xl:flex-grow">
+                <span className="md:hidden xl:inline">
+                    {getArtistString(artists)} -&nbsp;
+                </span>
+                <span className="hidden md:inline xl:hidden">
+                    [{track.trackNumber}] -&nbsp;
+                </span>
+                <span>
+                    <a href={track.url}>{track.name}</a>
+                </span>
             </div>
-            <div className="item-column hidden md:block xl:hidden">
-                <span>{album.name}</span>
+            <div className="hidden md:block xl:hidden ">
+                <span>
+                    <a href={album.url}>{album.name}</a>
+                </span>
             </div>
-            <div className="item-column  hidden md:block xl:hidden">
-                <span>{artistString}</span>
+            <div className="text-right flex-grow hidden md:block xl:hidden ">
+                <span>
+                    by <a href="">{getArtistString(artists)}</a>
+                </span>
             </div>
-            <div className="item-column flex-shrink">
-                <span>[24:00]</span>
+            <div className="mr-3">
+                <span>{getTrackDuration(track.duration)}</span>
             </div>
         </div>
     );

@@ -1,0 +1,7 @@
+@import '../../styles/includes.css';
+
+.TrackListItem {
+    a:hover {
+        @apply text-primary font-black;
+    }
+}

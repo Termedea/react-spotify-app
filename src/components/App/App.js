@@ -526,7 +526,6 @@ class App extends React.Component {
         };
     }
     componentDidMount() {
-        console.log(this.requestRecentTracks());
         this.setState({
             recentTracks: CleanTrackList(this.requestRecentTracks().items)
         });

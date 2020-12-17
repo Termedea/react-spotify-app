@@ -33,6 +33,6 @@
         @apply text-white mb-2;
     }
     .semi-transparent-item {
-        @apply bg-white bg-opacity-80 border-2 border-white;
+        @apply bg-white bg-opacity-95 border-2 border-white;
     }
 }

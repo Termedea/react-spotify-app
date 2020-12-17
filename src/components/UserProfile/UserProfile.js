@@ -1,5 +1,5 @@
 import React from 'react';
-import IconListItem from '../IconList/IconList';
+import IconListItem from '../IconList/IconListItem';
 import './UserProfile.css';
 
 class UserProfile extends React.Component {
@@ -305,7 +305,7 @@ class UserProfile extends React.Component {
                             {this.userInfo.display_name}
                         </a>
                     </h3>
-                    <div className="flex gap-8 flex-wrap justify-start items-start  ">
+                    <div className="flex gap-8 flex-wrap justify-center items-center  ">
                         <img
                             src="https://dummyimage.com/100"
                             alt="User Profile Picture"

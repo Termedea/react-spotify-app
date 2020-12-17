@@ -39,10 +39,10 @@ module.exports = {
     },
     watch: true,
     devServer: {
-        before: function (app, server) {
-            server._watch('./dist/**/*.html');
+        before: (app, server) => {
+            server._watch('./app/**/*.html');
         },
-        contentBase: path.join(__dirname, 'dist'),
+        contentBase: path.join(__dirname, 'app'),
         compress: true,
         hot: true,
         port: 3001
