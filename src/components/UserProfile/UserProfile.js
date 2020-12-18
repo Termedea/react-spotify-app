@@ -229,36 +229,45 @@ class UserProfile extends React.Component {
         });
     }
 
-    //calculate top genres
+    //getTopGenres alternative solution
     getTopGenres() {
-        let genreCount = [];
-        let prevGenre;
+        /* 1. Map: 
+            Creates an array containing the genres added to each artist 
 
-        //getting genres from artists, flatten, sorting, and looping through...
-        this.topArtists
-            .map((artist) => {
-                return artist.genres;
-            })
+            2. Flat & sort: 
+            Flattens the array of artist-genres to one array and sorts it for the comparasion for the count to work. 
+
+            3. Reduce:
+            Used tot for the total array and current for the current genre. Tot is set to an empty array from start. 
+            Using an object would have been cleaner, but to sort and splice it, I needed to keep it an array. 
+            This required (as far as I was able to deduce) the use of another variable, prev, which stored the previous item in the loop, 
+            along with the accumulated and the current.  
+            The first line is a tenerary op that adds an array with genre and count if it doesn't exist (current != prev), 
+            otherwise finds the existing genre in tot and adds 1 to the second item in the array (the count) if it's the current one.
+
+            3a) Reduce, solution with object in reduce (requires re-mapping to array later for sort and splice): 
+            reduce((tot, current) => (tot[current] = ++tot[curr]), prev), {})
+
+            4. Sort & splice.
+            Comparing the second item in the array (index 1, which stores the count), to compare for the sorting. Saving the top 5. 
+            */
+        let prev = '';
+        return this.topArtists
+            .map((artist) => artist.genres)
             .flat()
             .sort()
-            .forEach((genre) => {
-                //...to save unique instances of the genre in genreCount.
-                if (genre !== prevGenre) {
-                    genreCount.push([genre, 1]);
-                } else {
-                    genreCount.find((item) => {
-                        //if the genre exists, add to its count.
-                        if (item[0] === genre) {
-                            item[1]++;
-                        }
-                    });
-                }
-                prevGenre = genre;
-            });
+            .reduce((tot, current) => {
+                current !== prev
+                    ? tot.push([current, 1])
+                    : tot.find((genre) => genre[0] === current && genre[1]++);
 
-        //set the state to top 5 genres from genreCount.
-        return genreCount.sort((a, b) => b[1] - a[1]).splice(0, 5);
+                prev = current;
+                return tot;
+            }, [])
+            .sort((a, b) => b[1] - a[1])
+            .splice(0, 5);
     }
+
     showList(list, type) {
         if (type === 'genres') this.showTopGenres();
         else {

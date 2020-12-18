@@ -23,7 +23,6 @@ const getArtistString = (artists) => {
 };
 
 const TrackListItem = ({ track, album, artists }) => {
-    console.log(track, artists, album);
     return (
         <div className="TrackListItem semi-transparent-item flex items-center justify-left gap-3 rounded-md mb-2">
             <div className="flex-shrink ">
@@ -47,9 +46,7 @@ const TrackListItem = ({ track, album, artists }) => {
                 </span>
             </div>
             <div className="text-right flex-grow hidden md:block xl:hidden ">
-                <span>
-                    by <a href="">{getArtistString(artists)}</a>
-                </span>
+                <span>by {getArtistString(artists)}</span>
             </div>
             <div className="mr-3">
                 <span>{getTrackDuration(track.duration)}</span>
